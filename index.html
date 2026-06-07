@@ -2,21 +2,21 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>NEU INDEX</title>
+  <title>8ALL – INDEX</title>
+
   <style>
-    body.new-effect {
+    body {
       background:#0d0d0f;
       color:#00eaff;
       font-family: monospace;
-      animation:newPulse 1.5s infinite;
       text-align:center;
       padding-top:40px;
     }
-    @keyframes newPulse {
-      0% { filter:brightness(1); }
-      50% { filter:brightness(2.2); }
-      100% { filter:brightness(1); }
+
+    h1 {
+      margin-bottom:30px;
     }
+
     a {
       display:inline-block;
       margin:10px;
@@ -26,16 +26,31 @@
       border:1px solid #00eaff;
       color:#00eaff;
     }
+
+    .pulse {
+      animation:pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { filter:brightness(1); }
+      50% { filter:brightness(2.2); }
+      100% { filter:brightness(1); }
+    }
   </style>
 </head>
-<body class="new-effect">
 
-  <h1>NEUER INDEX AKTIV</h1>
+<body>
 
+  <h1 class="pulse">8ALL – NEUER INDEX</h1>
+
+  <!-- ALT / NEU / RUN / LIST bleiben erhalten -->
   <a href="/old/index.html">ALT‑ANSICHT</a>
   <a href="/run.html">RUN</a>
   <a href="/list.html">LIST</a>
 
+  <!-- NEU: Präsentation starten -->
+  <br><br>
+  <a href="/visio.me.html">8ALL – Präsentation starten</a>
+
 </body>
 </html>
-
