@@ -1,1 +1,19 @@
+# 8ALL STATIC CONFIG
+version: 1
+
+8all:
+  state: ready
+  active: true
+  mode: orbit
+  claim: "Normen + Stabilität + Qualität"
+
+ist:
+  tech: OK
+  norm: OK
+  respo: NEU
+
+soll:
+  tech: OK
+  norm: OK
+  respo: NEU
 
