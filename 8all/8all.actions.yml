@@ -1,1 +1,21 @@
+version: 1
+
+actions:
+  - id: check_norm
+    label: "Norm prüfen"
+    meaning: "8ALL prüft IST/SOLL und Normen"
+    target: 8all
+    type: check
+
+  - id: scan_system
+    label: "System scannen"
+    meaning: "8ALL scannt 4ALL, 2BE4, SHINE"
+    target: system
+    type: scan
+
+  - id: report_status
+    label: "Status anzeigen"
+    meaning: "8ALL erstellt einen einfachen Orbit-Report"
+    target: 8all
+    type: report
 
