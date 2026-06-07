@@ -1,9 +1,8 @@
-# 8ALL STATIC CONFIG
 version: 1
 
 8all:
-  state: ready
   active: true
+  state: ready
   mode: orbit
   claim: "Normen + Stabilität + Qualität"
 
@@ -17,3 +16,21 @@ soll:
   norm: OK
   respo: NEU
 
+normen:
+  required:
+    - tech
+    - norm
+    - respo
+  version: 1.0
+
+scan:
+  enabled: true
+  watches:
+    - 4all
+    - 2be4
+    - shine
+    - system
+
+report:
+  enabled: true
+  format: simple
