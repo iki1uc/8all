@@ -1,41 +1,26 @@
-# 8ALL STATIC CONFIG
-version: 1
+name: Deploy to GitHub Pages
 
-8all:
-  active: true
-  mode: orbit
-  claim: "Normen + Stabilität + Qualität"
-  purpose:
-    - "IST/SOLL überwachen"
-    - "System-Normen halten"
-    - "Orbit über 4ALL und 2BE4"
-    - "Stabilität sichern"
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
 
-ist:
-  tech: OK
-  norm: OK
-  respo: NEU
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-soll:
-  tech: OK
-  norm: OK
-  respo: NEU
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-normen:
-  required:
-    - tech
-    - norm
-    - respo
-  version: 1.0
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
 
-scan:
-  enabled: true
-  watches:
-    - 4all
-    - 2be4
-    - shine
-    - system
-
-report:
-  enabled: true
-  format: simple
+      - name: Deploy
+        uses: actions/deploy-pages@v5
