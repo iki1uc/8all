@@ -4,33 +4,3 @@ version: 1
   active: true
   state: ready
   mode: orbit
-  claim: "Normen + Stabilität + Qualität"
-
-ist:
-  tech: OK
-  norm: OK
-  respo: NEU
-
-soll:
-  tech: OK
-  norm: OK
-  respo: NEU
-
-normen:
-  required:
-    - tech
-    - norm
-    - respo
-  version: 1.0
-
-scan:
-  enabled: true
-  watches:
-    - 4all
-    - 2be4
-    - shine
-    - system
-
-report:
-  enabled: true
-  format: simple
