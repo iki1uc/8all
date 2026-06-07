@@ -1,1 +1,14 @@
+{
+  "move": {
+    "shine_active": "EVO",
+    "shine_alt": "REV",
+    "shine_alt_link": "/x4/shine.rev.look.json"
+  },
+  "alt": {
+    "index": "/old/index.html"
+  },
+  "tech": {
+    "version": "1.0.0"
+  }
+}
 
