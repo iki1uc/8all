@@ -1,58 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>VISIO‑2ME – ORBIT</title>
-  <style>
-    body {
-      background:#0d0d0f;
-      color:#00eaff;
-      font-family: monospace;
-      text-align:center;
-      padding-top:40px;
-      white-space: pre;
-      cursor: default; /* ← FIX gegen Maus-Hand */
-    }
-  </style>
-</head>
+<pre id="engine">
+      ▲
+   ▲     ▲
 
-<body>
+● →         ← ●
+</pre>
 
-VISIO‑2ME – ORBIT
+<script>
+// Dreiecke rotieren (ASCII)
+let angle = 0;
 
-Orbit‑Layer aktiv.
-Dieser Raum ist die Erweiterung des ersten VISIO‑Raums
-und wird durch LoOock OrbiT geöffnet.
+// Driftpunkte
+let left = 0;
+let right = 20;
 
-     ▲        ▲
-    ◢◤ iki  ◢◤
-      ◣
-      ◢█◤1
-  ▲        ◣        ▲
-  ◢◤  ◢███◤uc     ◢◤
-         ◥◤
+function render() {
+  const tri1 = "▲";
+  const tri2 = "▲";
+  const tri3 = "▲";
 
-────────────────────────────────────────
+  // einfache Rotation (ASCII-Shift)
+  const rot = angle % 3;
+  const tris = [
+    ["      ▲", "   ▲     ▲"],
+    ["      ▲", "   ▲     ▲"],
+    ["      ▲", "   ▲     ▲"]
+  ][rot];
 
-3D‑Orbit‑Körper
-     ●────●────●
-    /    /│    /│
-  ●────● │ ●────●
-  │    │ ● │    │
-  │    │/  │    │/
-  ●────●────●────●
+  // Drift
+  left += 1;
+  right -= 1;
 
-────────────────────────────────────────
+  // Treffpunkt
+  let meet = "";
+  if (left >= right) {
+    meet = "\n     ●   ← neuer Treffpunkt";
+  }
 
-GEN‑AST (bereit)
-Raster‑Kern
-Tiefen‑Shift
-Aura‑Kante
+  document.getElementById("engine").textContent =
+    tris[0] + "\n" +
+    tris[1] + "\n\n" +
+    " ".repeat(left) + "● →" + " ".repeat(right - left) + "← ●" +
+    meet;
 
-────────────────────────────────────────
+  angle++;
+  requestAnimationFrame(render);
+}
 
-Hinweis:
-Dieser MODE wird durch ALT → LoOock OrbiT aktiviert.
-
-</body>
-</html>
+render();
+</script>
